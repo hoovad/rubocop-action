@@ -8,6 +8,8 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    GITHUB_TOKEN: '${{ inputs.GITHUB_TOKEN }}'
 branding:
   icon: 'code'
   color: 'red'
