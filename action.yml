@@ -1,0 +1,13 @@
+name: 'ci-rubocop-linter'
+description: 'Lint your Ruby code'
+author: 'Alberto Gimeno, hoovad'
+inputs:
+  github_token:
+    description: 'GitHub token for authentication'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'code'
+  color: 'red'
