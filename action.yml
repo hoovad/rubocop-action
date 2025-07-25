@@ -5,15 +5,11 @@ inputs:
   github_token:
     description: 'GitHub token for authentication'
     required: true
-  rubocop_cmd:
-    description: 'Command that runs Rubocop (default "rubocop --format json")'
-    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
     GITHUB_TOKEN: '${{ inputs.GITHUB_TOKEN }}'
-    RUBOCOP_CMD: '${{ inputs.RUBOCOP_CMD }}'
 branding:
   icon: 'code'
   color: 'red'

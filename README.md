@@ -26,7 +26,6 @@ This action requires the `checks: write` and `contents: read` permissions in ord
 You can pass the following options to the action:
 
 - `github_token`: Required. This variable is automatically created by GitHub actions, no need to set it yourself. However, you must make sure that the permissions are set correctly in your workflow file.
-- `rubocop_cmd`: Optional. The command that runs Rubocop. Defaults to `rubocop --format json` (JSON formatting is required for the action to work properly)
 
 The full job should look like something similar to this:
 

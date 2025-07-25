@@ -6,7 +6,6 @@ require 'time'
 @GITHUB_EVENT_PATH = ENV["GITHUB_EVENT_PATH"]
 @GITHUB_TOKEN = ENV["GITHUB_TOKEN"]
 @GITHUB_WORKSPACE = ENV["GITHUB_WORKSPACE"]
-@RUBOCOP_CMD = ENV["RUBOCOP_CMD"] || "rubocop --format json"
 
 @event = JSON.parse(File.read(ENV["GITHUB_EVENT_PATH"]))
 @repository = @event["repository"]
@@ -76,7 +75,7 @@ def run_rubocop
   annotations = []
   errors = nil
   Dir.chdir(@GITHUB_WORKSPACE) {
-    errors = JSON.parse(`#{@RUBOCOP_CMD}`)
+    errors = JSON.parse(`rubocop --format json`)
   }
   conclusion = "success"
   count = 0
